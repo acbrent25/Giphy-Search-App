@@ -1,18 +1,14 @@
 
 $(document).ready(function() {
 
-
     var gifs = ['Blade Runner', 'Stand By Me', 'Predator', 'The Shining', 'Outsiders' ];
 
         function displayGiphy() {
-            var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + gif + '&api_key=5a3bb5dd2a3847afba0ee3a8814db9e5&limit=10';
+        var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + gif + '&api_key=5a3bb5dd2a3847afba0ee3a8814db9e5&limit=10';
 
             $.ajax({
                 url: queryURL,
                 method: "GET",
-                // error: function (XMLHttpRequest, textStatus, errorThrown) {
-                //     console.log('XHR ERROR ' + XMLHttpRequest.status);
-                // },
             }).done(function(response) {
 
             console.log(response);
@@ -34,9 +30,7 @@ $(document).ready(function() {
                         gifDiv.append(gifImg);
                         gifDiv.append(rating);
                         $('#giphy-area').append(gifDiv);
-
                     }
-
             });
 
         } // display giphy
@@ -56,14 +50,16 @@ $(document).ready(function() {
             } // render buttons
 
             $('#search-btn').on('click', function(event) {
-                event.preventDefault();
-                gif = $('#giphy-search').val().trim();            
+                event.preventDefault();       
+                gif = $('#giphy-search').val().trim(); 
                 gifs.push(gif);
+                $('#giphy-search').val('');
                 renderButtons();
             });
 
             $(document).on('click', '.gif', function(e) {
-                e.preventDefault;                
+                e.preventDefault;  
+                $('#giphy-area').empty();                            
                 gif = $(this).attr('data-name');
                 console.log('gif: ' + gif);
                 displayGiphy();
@@ -72,6 +68,7 @@ $(document).ready(function() {
 
             $(document).on('click', '.gifImg', function(e) {
                 e.preventDefault;  
+                
                 var state = $(this).attr('data-state');
                 console.log(state);
 
