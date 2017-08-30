@@ -1,0 +1,19 @@
+#search-btn {
+    margin-top: 10px;
+}
+
+img.gifImg {
+    max-width: 300px;
+    max-height: 150px;
+    margin: 5px;
+}
+
+.gif-div {
+    min-height: 215px;
+    float: left;
+}
+
+p.rating {
+    text-transform: uppercase;
+    padding: 0 0 0 10px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+     
+
+
+var gifs = ['blade runner', 'stand by me', 'predator', 'the shining', 'outsiders' ];
+
+ function displayGiphy() {
+
+    var gif = 'predator';
+    var queryURL = 'http://api.giphy.com/v1/gifs/search?q=predator&api_key=5a3bb5dd2a3847afba0ee3a8814db9e5&limit=10';
+
+    // Ajax call
+
+    $.ajax({
+        url: queryURL,
+        method: 'GET'
+      }).done(function(response) {
+        console.log(queryURL);
+      });
+
+ } // display giphy
+   
+        
+        
+        
+    </script>
+    
+</body>
+</html>
